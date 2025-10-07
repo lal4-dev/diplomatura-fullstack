@@ -8,12 +8,15 @@
     <link rel="short icon" href="../static/img/favicon.png">
 
     <style>
+
+        /*body de la pagina*/
         body{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0px;
             color: #3f3f3f;
         }
 
+        /**/
         header{
             background-color: #00001d;
             color: #ffffff;
@@ -27,6 +30,7 @@
 
         nav{
             color: #9acd32;
+            cursor: pointer;
         }
 
         main{
@@ -34,42 +38,141 @@
             padding: 15px;
         }
 
-        article{
+        .blanco{
             background-color: #ffffff;
             padding: 10px;
             margin-bottom: 10px;
+        }
+
+        .autor{
+            text-align: center;
+            background-color: #e0e0e0;
+            padding: 15px;
+        }
+
+        .autor-imagen{
+            border-radius: 50%;
+            border: 7px solid #9acd32;
+        }
+
+        .poema{
+            text-align: center;
+            background-color: #8fac55;
+            color: #00001d;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 15px;
         }
 
         footer{
             background-color: #00001d;
             color: #ffffff;
             padding: 15px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
      <header>
+        <h1>
+            Cool<span>Literato</span>
+        </h1>
+            
+        <h3>
+            Tu sitio web de literatura cool
+        </h3>
         <nav>
-
+            <p>
+                <u>Inicio</u> &bull; <u>Autores</u> &bull; <u>Libros</u> &bull; <u>Contacto</u> 
+            </p>
         </nav>
      </header>
 
      <main>
         <article>
-            <div>
+            <div class="blanco">
+
+                <h2>Escritores latinoamericanos</h2>
+
+                <div class="autor">
+                    <img src="../static/img/borges-argentina.jpg" alt="Jorge Luis Borges" class="autor-imagen">
+
+                    <h3>Jorge Francisco Isidoro Luis Borges</h3>
+
+                    <p>(24 de agosto de 1899 - 14 de junio de 1986)</p>
+                </div>
+
+                <p>
+                    Fue un escritor, poeta, ensayista y traductor argentino, 
+                    extensamente considerado una figura clave tanto para la 
+                    literatura en español como para la literatura universal.
+                </p>
+
+                <p>
+                    Sus dos libros más conocidos, Ficciones y El Aleph, 
+                    publicados en la década de 1940, son recopilaciones 
+                    de cuentos conectados por temas comunes como los sueños, 
+                    los laberintos, las bibliotecas, los espejos, los autores 
+                    ficticios y las mitologías europeas; sus argumentos 
+                    exploran ideas filosóficas relacionadas, por ejemplo, con la 
+                    memoria, la eternidad, la posmodernidad y la metaficción.
+                </p>
+
+                <p>
+                    La obra de Borges ha contribuido ampliamente a la 
+                    literatura filosófica, al género fantástico y al 
+                    posestructuralismo, e influyó profundamente en el 
+                    realismo mágico de la literatura latinoamericana durante 
+                    el siglo XX
+                </p>
+
+                <p><span>Ver Más... </span></p>
 
             </div>
         </article>
 
         <article>
-            <div>
+            <div class="poema">
+                <blockquote>
+                    <strong>
+                        
+                            <h2>Ausencia</h2>
 
+                            <em>
+                                Habré de levantar la vasta vida <br>
+                                que aún ahora es tu espejo: <br>
+                                cada mañana habré de reconstruirla. <br>
+                                Desde que te alejaste, <br>
+                                cuántos lugares se han tornado vanos <br>
+                                y sin sentido, iguales <br>
+                                a luces en el día. <br>
+                                Tardes que fueron nicho de tu imagen, <br>
+                                músicas en que siempre me aguardabas, <br>
+                                palabras de aquel tiempo, <br>
+                                yo tendré que quebrarlas con mis manos. <br>
+                                ¿En qué hondonada esconderé mi alma <br>
+                                para que no vea tu ausencia <br>
+                                que como un sol terrible, sin ocaso, <br>
+                                brilla definitiva y despiadada? <br>
+                                Tu ausencia me rodea <br>
+                                como la cuerda a la garganta, <br>
+                                el mar al que se hunde <br>
+                            <em>
+                        
+                    </strong>
+                </blockquote>
             </div>
         </article>
      </main>
 
      <footer>
-
+        <h2>
+            Cool<span>Literato</span>
+        </h2>
+            
+        <p>
+            CoolLiterato - 2025 &copy;<br>
+            Todos los derechos reservados
+        </p>
      </footer>
 </body>
 </html>
