@@ -6,4 +6,6 @@
 ## Tp2 - Listo
 ## Tp3 - Listo
 ## Tp4 - Listo
-## Tp5 - 
+## Tp5 - Listo
+## Tp6 - Listo
+## Tp7 - Listo
