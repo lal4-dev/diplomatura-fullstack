@@ -81,14 +81,14 @@ figure{
 }
 
 /* AGREGUE el selector correspondiente para la etiqueta que hace de epígrage del texto que está justo por debajo de la imagen*/
-figcaption{
+figure figcaption{
     text-align: center;
     font-size: small;
     padding: 5px;
 }
 
 /* AGREGUE el selector correspondiente a la etiqueta span que se encuentra dentro de la etiqueta figcaption */
-figcaption span{
+figure figcaption span{
     font-weight: 600;
     color: #02519b;
 }
@@ -114,7 +114,7 @@ main h2{
 }
 
 /* AGREGUE el selector correspondiente para todos los enlaces de la pagina  que se encuentren dentro de los párrafo que contengan la clase normal, de modo que los hipervínculos se vean de este color*/
-.normal a{
+p.normal a{
     color:#1e90ff;
 }
 
@@ -170,10 +170,4 @@ footer a/* AGREGUE el selector descendente correspondiente para TODOS los enlace
 {
     color:cyan;
     font-size:.8em;
-}
-
-
-/*lo agregue yo para las lineas 55 -77*/
-.veoTambien{
-    font-style: italic; font-weight: 600;
 }
