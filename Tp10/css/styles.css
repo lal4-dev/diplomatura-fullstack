@@ -1,3 +1,449 @@
 /* ******************************************************************************************************
     Aquí, todos los estilos necesarios para realizar el ejercicio. Buena Suerte con eso, y a divertirse!!
 *********************************************************************************************************/
+
+/*aca largo con el css de la consigna*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lilita+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
+
+body{
+    font-size: 14px;
+    margin: 0px;
+    color: #3f3f3f;
+}
+
+h1,h2{
+    margin: 0px;
+}
+
+header, footer{
+    font-family: 'Russo One';
+    font-size: 1.5em;
+    color: #ffffff;
+    background-color: #e72727;
+    padding: 25px;
+    text-align: center;
+
+}
+
+main{
+    background-color:#dacdcd;
+    padding: 20px;
+}
+
+section{
+    background-color:#e72727 ;
+    color: #ffc7c7;
+    font-family: 'Lilita One';
+    font-size: 1.2em;
+    padding: 15px;
+}
+
+article{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    padding: 15px;
+}
+
+/*aca largo con los lo desarrollado segun el html del punto*/
+
+
+/*Font-family  - Familia de fuente*/
+.cursiv{
+    font-family:cursive;
+}
+
+.verdana{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.roboto{
+    font-family: 'Roboto';
+}
+
+.fant{
+    font-family: fantasy;
+}
+
+.times{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.monos{
+    font-family: monospace;
+}
+
+.Josefin-Slab{
+    font-family: 'Josefin Slab';
+}
+
+
+/*Font-size - Tamaño de fuente*/
+.peque{
+    font-size: small;
+}
+
+.medium{
+    font-size: medium;
+}
+
+.grande{
+    font-size: large;
+}
+
+.mas-grande{
+    font-size: xx-large;
+}
+
+.och{
+    font-size: 8px;
+}
+
+.diz{
+    font-size: 10px;
+}
+
+.docho{
+    font-size: 18px;
+}
+
+.vtr{
+    font-size: 24px;
+}
+
+.trei{
+    font-size: 30px;
+}
+
+.mitad{
+    font-size: 0.5em;
+}
+
+.uno{
+    font-size: 1em;
+}
+
+.ymedio{
+    font-size: 1.5em;
+}
+
+.doble{
+    font-size: 2em;
+}
+
+.triple{
+    font-size: 3em;
+}
+
+/*font-weight - grosor de fuente*/
+.grosor-100{
+    font-weight: 100px;
+    font-family: 'Josefin Slab';
+    font-size: medium;
+}
+
+.grosor-300{
+    font-weight: 300px;
+    font-family: 'Josefin Slab';
+    font-size: 1.5em;
+}
+
+.grosor-600{
+    font-weight: 600px;
+    font-family: 'Josefin Slab';
+    font-size: 1.5em;
+}
+
+.grosor-800{
+    font-weight: 800px;
+    font-family: 'Josefin Slab';
+    font-size: 24px;
+}
+
+/*font-style - estilo de fuente*/
+.italic-100 {
+  font-style: italic;
+  font-weight: 100;
+  font-family: 'Roboto';
+  font-size: medium;
+}
+
+.italic-300 {
+  font-style: italic;
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 1.5em; 
+}
+
+.italic-600 {
+  font-style: italic;
+  font-weight: 600;
+  font-family: 'Roboto';
+  font-size: medium;
+}
+
+.italic-800 {
+  font-style: italic;
+  font-weight: 800;
+  font-family: 'Roboto';
+  font-size: xxlarge;
+}
+
+/*font-variant - Variante de fuente*/
+
+.var-normal {
+  font-variant: normal;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+
+.var-smallcaps {
+  font-variant: small-caps;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+}
+
+/*Text-Transform - Transformación de Texto*/
+
+.transf-normal {
+  text-transform: none; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+
+.transf-capit {
+  text-transform: capitalize;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+
+.transf-lower {
+  text-transform: lowercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+
+.transf-upper {
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  font-style: italic;
+}
+
+/* Text-Indent - Identación de Texto*/
+.indent75 {
+  text-indent: 75px;
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 1.5em;
+}
+
+.indent3 { /* La clase es indent3, pero la descripción dice 4em */
+  text-indent: 4em; 
+  font-weight: 300;
+  font-family: 'Roboto';
+  font-size: 1.5em;
+}
+
+/*Text-Align - Alineación de Texto*/
+
+.t-left {
+  text-align: left;
+  font-size: 24px;
+  font-family: 'Josefin Slab';
+  font-weight: 300;
+}
+
+.t-right {
+  text-align: right;
+  font-size: 24px;
+  font-family: 'Josefin Slab';
+  font-weight: 300;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-justify {
+  text-align: justify;
+  font-size: 24px;
+  font-family: 'Josefin Slab';
+  font-weight: 300;
+  text-indent: 75px;
+}
+
+/*line height - altura de linea*/
+.line-normal {
+  line-height: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.line-px24 {
+  line-height: 24px;
+  font-family: 'Josefin Slab';
+}
+
+.line-percent {
+  line-height: 150%;
+  font-family: 'Josefin Slab';
+}
+
+.line-relative {
+  line-height: 2.5; 
+  font-family: 'Times New Roman', Times, serif;
+}
+
+
+/*word-spacing - espaciado entre palabras */
+
+.wspacing-normal {
+  word-spacing: normal;
+  font-family: 'Roboto';
+  font-size: large;
+  text-align: center;
+}
+
+.wspacing-posit {
+  word-spacing: 8px;
+  font-family: 'Roboto';
+  font-size: large;
+  text-align: center;
+}
+
+.wspacing-nega {
+  word-spacing: -2px;
+  font-family: 'Roboto';
+  font-size: large;
+  text-align: center;
+}
+
+/*letter-spacing - espaciado entre letras*/
+
+.lspacing-normal {
+  letter-spacing: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: large;
+  text-align: center;
+}
+
+.lspacing-posit {
+  letter-spacing: 8px;
+  font-family: 'Roboto';
+  font-size: large;
+  text-align: center;
+}
+
+.lspacing-nega {
+  letter-spacing: -2px;
+  font-family: 'Josefin Slab';
+  font-size: large;
+  text-align: center;
+}
+
+/*text-decoration - decoracion de texto*/
+
+.tdecor-none {
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.overline {
+  text-decoration: overline;
+  font-size: small;
+}
+
+.over_under {
+  text-decoration: overline underline;
+  font-size: 24px;
+}
+
+.through {
+  text-decoration: line-through;
+  font-size: 24px;
+}
+
+.underline {
+  text-decoration: underline red;
+  font-size: 24px;
+}
+
+.underline-solid {
+  text-decoration: underline solid blueviolet;
+  font-size: 24px;
+}
+
+.underline-dotted {
+  text-decoration: underline dotted orange;
+  font-size: 24px;
+}
+
+.underline-double {
+  text-decoration: underline double;
+  font-size: medium;
+}
+
+.underline-dashed {
+  text-decoration: underline dashed;
+  font-size: 18px;
+}
+
+.underline-wavy {
+  text-decoration: underline wavy;
+  font-size: 18px;
+}
+
+.underline-red {
+  text-decoration: underline solid red;
+  font-size: 24px;
+}
+
+.underline-blue {
+  text-decoration: underline dotted blue;
+  font-size: xxlarge;
+}
+
+.underline-orange {
+  text-decoration: underline double orange;
+  font-size: large;
+}
+
+.underline-green {
+  text-decoration: underline dashed green;
+  font-size: 24px;
+}
+
+.underline-blueviolet {
+  text-decoration: underline wavy blueviolet;
+  font-size: 24px;
+}
+
+/*text-shadow - sombra de texto*/
+.shadow1 {
+  text-shadow: 4px 4px 5px gray;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: orange;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.shadow2 {
+  text-shadow: 2px 2px 2px black;
+  font-family: 'Josefin Slab';
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.shadow3 {
+  text-shadow: 5px 5px 2px hotpink;
+  font-family: fantasy;
+  color: white;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: capitalize;
+}
