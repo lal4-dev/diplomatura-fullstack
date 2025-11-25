@@ -1,0 +1,311 @@
+/* Propiedades comunes  */
+
+body {
+  font-family: sans-serif;
+  margin:0;
+}
+
+header{
+    text-align: ;
+}
+
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 1  flex*/
+/* * * * * * * * * * * * * * * * * * */
+
+article.ejercicio1 {
+    display: ;
+        gap: ;
+}
+.ejercicio1 div{
+  width: 250px;
+  border: 1px solid rgb(133, 133, 133);
+}
+
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 2  flex-wrap*/
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio2 {
+    display: ;
+        flex-wrap: ;
+        gap:
+}
+.ejercicio2 div{
+  width: 250px;
+  border: 1px solid rgb(133, 133, 133);
+}
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 3.1  Justify-Content*/
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio31 {
+    margin-bottom: 50px
+    display: ;
+        flex-wrap: ;
+        gap:;
+        justify-content: ;
+}
+article.ejercicio31 div{
+    width: 250px;
+    border: 1px solid rgb(194, 193, 193);
+    padding: 10px;
+}
+article.ejercicio31 div:first-child{
+    background-color: rgb(248, 149, 142)
+}
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 3.2  - Justify-Content*/ 
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio32 {
+    margin-bottom: 50px;
+    display: ;
+        flex-wrap: ;
+        gap: ;
+        justify-content: ;
+    
+}
+article.ejercicio32 div{
+    width: 250px;
+    border: 1px solid rgb(194, 193, 193);
+    padding: 10px;
+}
+article.ejercicio32 div:first-child{
+    background-color: rgb(142, 245, 248)
+}
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 3.3  Justify-Content */
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio33 {
+    margin-bottom: 50px;
+    display: ;
+        flex-wrap: ;
+        gap: ;
+        justify-content: ;
+    
+}
+article.ejercicio33 div{
+    width: 250px;
+    border: 1px solid rgb(194, 193, 193);
+    padding: 10px;
+}
+article.ejercicio33 div:first-child{
+    background-color: rgb(246, 248, 142)
+}
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 3.4  Justify-Content */
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio34 {
+    margin-bottom: 50px;
+    display: ;
+        flex-wrap: ;
+        gap: ;
+        justify-content: ;
+    
+}
+article.ejercicio34 div{
+    width: 250px;
+    border: 1px solid rgb(194, 193, 193);
+    padding: 10px;
+}
+article.ejercicio34 div:first-child{
+    background-color: rgb(188, 142, 248)
+}
+
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 3.5  Justify-Content */
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio35 {
+    margin-bottom: 50px;
+    display: flex;
+        flex-wrap: wrap;
+        gap:10px;
+        justify-content:space-evenly;
+}
+article.ejercicio35 div{
+    width: 250px;
+    border: 1px solid rgb(194, 194, 193);
+    padding: 10px;
+}
+article.ejercicio35 div:first-child{
+    background-color: rgb(176, 248, 142)
+}
+
+/* * * * * * * * * * * * * * * * * * */
+/* EJERCICIO 4.1  Align-items */
+/* * * * * * * * * * * * * * * * * * */
+article.ejercicio41 {
+    margin-bottom: 50px;
+    display: ;
+        flex-wrap: ;
+        gap: ;
+        align-items: ;
+}
+article.ejercicio41 div{
+    width: 250px;
+    border: 1px solid rgb(194, 194, 193);
+    padding: 10px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * /
+/* EJERCICIO 4.2  Align-items - Justify-content  */
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+article.ejercicio42 {
+    margin-bottom: 50px;
+    display: ;
+        flex-wrap: ;
+        gap: ;
+        align-items: ;
+        justify-content: ;
+    
+}
+article.ejercicio42 div{
+    width: 250px;
+    border: 1px solid rgb(194, 194, 193);
+    padding: 10px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * /
+/* EJERCICIO 5.1 Flex en varios contenedores */
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+article.ejercicio51 {
+    margin-bottom: 50px;
+    display: ;
+      flex-wrap: ;
+      justify-content: ;
+      gap: ;
+}
+article.ejercicio51 > div{
+    width: 200px;
+    min-height: 70;
+    border: 1px solid rgb(128, 128, 128);
+    text-align: center;
+    display: ;
+
+}
+article.ejercicio51 h2{
+    padding: 15px 0;
+    width: 100%;
+    margin:0;
+    background-color: lightgray;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * /
+/* EJERCICIO 5.2 Flex en varios contenedores  */
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+article.ejercicio52 {
+    margin-bottom: 50px;
+    display: ;
+      flex-wrap: ;
+      justify-content: ;
+      gap: ;
+}
+article.ejercicio52 div{
+    width: 250px;
+    border: 1px solid rgb(128, 128, 128);
+    display: ;
+}
+article.ejercicio52 p{
+    width: 100%;
+    margin:0;
+    padding:10px;
+    border-left: 1px solid rgb(128, 128, 128);
+
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * /
+/* EJERCICIO 5.3 Flex en varios contenedores */
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+article.ejercicio53 {
+    margin-bottom: 50px;
+    display: ;
+      flex-wrap: ;
+      justify-content:  ;
+      align-items:  ;
+      gap: ;
+}
+article.ejercicio53 div{
+    width: 250px;
+    border: 1px solid rgb(128, 128, 128);
+    display: ;
+}
+article.ejercicio53 p{
+    width: 100%;
+    margin:0;
+    padding:10px;
+    border-left: 1px solid rgb(128, 128, 128);
+    background-color: lightgray ;
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * /
+/* EJERCICIO 5.4 Flex en varios contenedores flex-direction */
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+article.ejercicio54 {
+    margin-bottom: 50px;
+    display: ;
+      flex-wrap: ;
+      justify-content:;
+      gap: ;
+}
+article.ejercicio54 div.parte1{
+    width: 250px;
+    border: 1px solid rgb(128, 128, 128);
+    display: ;
+}
+article.ejercicio54 div.parte2{
+    border-left: 1px solid rgb(128, 128, 128);
+    display: ;
+    flex-direction: ;
+}
+article.ejercicio54 h2{
+  margin:0;
+  padding:10px;
+  text-align: center;
+  background-color: lightgray ;
+}
+
+article.ejercicio54 p{
+    margin:0;
+    padding:10px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * *  * * * * * */
+/* EJERCICIO 5.5 Flex en varios contenedores flex-direction */
+/* * * * * * * * * * * * * * * * * * * * * * * *  * * * * * */
+article.ejercicio55 {
+    margin-bottom: 50px;
+    display: ;
+      flex-wrap: ;
+      justify-content: ;
+      gap: ;
+}
+article.ejercicio55 div.parte3{
+    width: 300px;
+    border: 1px solid rgb(128, 128, 128);
+    display: ;
+        flex-direction: ;
+}
+article.ejercicio55 div.parte4{
+    border-bottom: 1px solid rgb(128, 128, 128);
+    display: ;
+        flex-direction:  ;
+}
+article.ejercicio55 h2{
+  margin:0;
+  width: 100%;
+  padding:10px;
+  text-align: center;
+  background-color: lightgray ;
+}
+
+article.ejercicio55 p{
+    margin:0;
+    padding:10px;
+}
