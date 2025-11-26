@@ -6,7 +6,7 @@ body {
 }
 
 header{
-    
+    text-align: center;
 }
 
 
@@ -15,6 +15,8 @@ header{
 /* * * * * * * * * * * * * * * * * * */
 
 article.ejercicio1 {
+    display: flex;
+        gap: 10px;
 
     /* Aquí el código Flex*/
 
@@ -29,7 +31,9 @@ article.ejercicio1 {
 /* EJERCICIO 2  flex-wrap*/
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio2 {
-
+    display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
     /* Aquí el código Flex*/
 
 }
@@ -42,7 +46,11 @@ article.ejercicio2 {
 /* EJERCICIO 3.1  Justify-Content*/
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio31 {
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
     
     /* Aquí el código Flex*/
 }
@@ -60,6 +68,10 @@ article.ejercicio31 div:first-child{
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio32 {
     margin-bottom: 50px;
+    display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        gap: 10px;
 
     /* Aquí el código Flex*/   
 }
@@ -77,7 +89,10 @@ article.ejercicio32 div:first-child{
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio33 {
     margin-bottom: 50px;
-    
+    display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        flex-wrap: wrap;
     /* Aquí el código Flex*/
 }
 article.ejercicio33 div{
@@ -94,6 +109,10 @@ article.ejercicio33 div:first-child{
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio34 {
     margin-bottom: 50px;
+    display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
 
     /* Aquí el código Flex*/
 }
@@ -112,6 +131,10 @@ article.ejercicio34 div:first-child{
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio35 {
     margin-bottom: 50px;
+    display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+        flex-wrap: wrap;
 
     /* Aquí el código Flex*/
 }
@@ -129,6 +152,10 @@ article.ejercicio35 div:first-child{
 /* * * * * * * * * * * * * * * * * * */
 article.ejercicio41 {
     margin-bottom: 50px;
+    display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
 
     /* Aquí el código Flex*/
 }
@@ -143,7 +170,11 @@ article.ejercicio41 div{
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 article.ejercicio42 {
     margin-bottom: 50px;
-
+    display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
     /* Aquí el código Flex*/    
 }
 article.ejercicio42 div{
@@ -157,6 +188,10 @@ article.ejercicio42 div{
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 article.ejercicio51 {
     margin-bottom: 50px;
+    display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
 
     /* Aquí el código Flex*/
 }
@@ -166,7 +201,8 @@ article.ejercicio51 > div{
     border: 1px solid rgb(128, 128, 128);
     text-align: center;
    /* Aquí el código Flex*/
-
+   display: flex;
+        
 }
 article.ejercicio51 h2{
     padding: 15px 0;
@@ -180,6 +216,10 @@ article.ejercicio51 h2{
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 article.ejercicio52 {
     margin-bottom: 50px;
+    display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
 
     /* Aquí el código CSS*/
 }
@@ -187,6 +227,7 @@ article.ejercicio52 div{
     width: 250px;
     border: 1px solid rgb(128, 128, 128);
     /* Aquí el código Flex*/
+    display: flex;
 }
 article.ejercicio52 p{
     width: 100%;
@@ -202,6 +243,11 @@ article.ejercicio52 p{
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 article.ejercicio53 {
     margin-bottom: 50px;
+    display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
 
     /* Aquí el código CSS*/
 }
@@ -209,6 +255,7 @@ article.ejercicio53 div{
     width: 250px;
     border: 1px solid rgb(128, 128, 128);
     /* Aquí el código CSS*/
+    display: flex;
 }
 article.ejercicio53 p{
     width: 100%;
@@ -226,15 +273,22 @@ article.ejercicio54 {
     margin-bottom: 50px;
 
     /* Aquí el código CSS*/
+    display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 10px;
 }
 article.ejercicio54 div.parte1{
     width: 250px;
     border: 1px solid rgb(128, 128, 128);
     /* Aquí el código CSS*/
+    display: flex;
 }
 article.ejercicio54 div.parte2{
     border-left: 1px solid rgb(128, 128, 128);
     /* Aquí el código CSS*/
+    display: flex;
+        flex-direction: column;
 }
 article.ejercicio54 h2{
   margin:0;
@@ -253,17 +307,24 @@ article.ejercicio54 p{
 /* * * * * * * * * * * * * * * * * * * * * * * *  * * * * * */
 article.ejercicio55 {
     margin-bottom: 50px;
-
+    display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+        flex-wrap: wrap;
     /* Aquí el código CSS*/
 }
 article.ejercicio55 div.parte3{
     width: 300px;
     border: 1px solid rgb(128, 128, 128);
     /* Aquí el código CSS*/
+    display: flex;
+        flex-direction: column;
 }
 article.ejercicio55 div.parte4{
     border-bottom: 1px solid rgb(128, 128, 128);
     /* Aquí el código CSS*/
+    display: flex;
+        flex-direction: row;
 }
 article.ejercicio55 h2{
   margin:0;
