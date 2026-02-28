@@ -26,11 +26,11 @@ Las salidas las debe Mostrar por Consola.*/
 
     let aumentoAbril = (sueldoFebrero*2.85)/100;
     let sueldoAbril = (sueldoMarzo+aumentoAbril);
-    console.log = ("el sueldo de abril es: ",sueldoAbril);
+    console.log ("el sueldo de abril es: ",sueldoAbril);
 
     let aumentoMayo = (sueldoAbril*3.2)/100;
     let sueldoMayo = (sueldoAbril + aumentoMayo + bonoExtra);
-    console.log = ("el sueldo de mayo es: ",sueldoMayo);
+    console.log ("el sueldo de mayo es: ",sueldoMayo);
 
 
 }
