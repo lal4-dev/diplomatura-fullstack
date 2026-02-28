@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clase01</title>
-
-    <link rel="stylesheet" href="clase01.css">
+    <title>Calculadora de Descuento</title>
 </head>
-<body>
-    <h1>clase01</h1>
-    <p>ave que pinta</p>
 
-    <script src="clase01.js"></script>
+<body class="bg-black flex items-center justify-center h-screen text-white">
+
+    <div id="card" class="bg-zinc-900 p-8 rounded-2xl shadow-[0_0_25px_rgba(0,200,255,0.6)] w-80 transition-all duration-500">
+
+        <h2 class="text-xl mb-6 text-center font-semibold">
+            Calculadora 15% de Descuento
+        </h2>
+
+        <input type="number" id="monto" placeholder="Ingrese el monto"
+        class="w-full p-3 mb-4 rounded-lg bg-zinc-800 text-white placeholder-zinc-500 outline-none focus:ring-2 focus:ring-cyan-400"/>
+
+        <button onclick="calcularDescuento()"
+        class="w-full py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 transition font-semibold"> 
+            Aplicar descuento
+        </button>
+
+        <p id="resultado" class="mt-4 text-center text-cyan-300"></p>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="clase01.js"></script>
+
 </body>
 </html>
