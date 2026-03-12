@@ -28,7 +28,7 @@ Ejercicio Nro. 01:
     console.log(`La suma de los numeros: ${numeroA},${numeroB} = ${sumaAB}`);
     console.log(`La resta de los numeros: ${numeroA},${numeroB} = ${restaAB}`);
     console.log(`El producto de los numeros: ${numeroA},${numeroB} = ${productoAB}`);
-    if(numeroB == 0){
+    if(numeroB === 0){
         console.log(`No se puede dividir por cero`);
     }
     else{
