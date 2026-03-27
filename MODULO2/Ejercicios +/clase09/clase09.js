@@ -18,6 +18,14 @@ Si la deuda está entre el 30% y el 50% del ingreso → “Medio”
 Si la deuda supera el 50% del ingreso o la antigüedad laboral es menor a 1 año → “Alto”
 */
 
+const calcularIva = function(importeBase){
+    return (importeBase)*21/100;
+}
+
+const calcularIva2 = (importeBase)=>{
+    return (importeBase)*21/100;
+}
+
 function evaluacionRiesgo(ingreso,deuda,antiguedad){
     let porcentajedeuda = (deuda/ingreso)*100;
     let riesgo = ``;
@@ -43,6 +51,8 @@ function evaluacionRiesgo(ingreso,deuda,antiguedad){
     let antiguedadPersona = Number(prompt(`Ingrese la antiguedad de la persona: `));
     
     let riesgoPersona = evaluacionRiesgo(ingresoPersona,deudaPersona,antiguedadPersona);
+
+    let iva1 = calcularIva(ingresoPersona);
     
     console.log(`La persona con ingresos: ${ingresoPersona}, antiguedad: ${antiguedadPersona} y con una deuda de: ${deudaPersona} -> nos da un riesgo: ${riesgoPersona}`)
 }
