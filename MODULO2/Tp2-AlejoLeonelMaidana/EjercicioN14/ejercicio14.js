@@ -38,5 +38,88 @@ DOM y cargar los datos de entrada por medio de prompt.
 */
 
 {
+    let peajeCamion = 22000;
+    let peajeCamioneta = 12000;
+    let peajeAutomovil = 4000;
+    let peajeMotos = 1500;
+
+    let cantidadCamion = 0;
+    let cobradoCamion = 0; 
+
+    let cantidadCamioneta = 0;
+    let cobradoCamioneta = 0;
     
+    let cantidadAutomovil = 0;
+    let cobradoAutomovil = 0;
+    
+    let cantidadMotos = 0;
+    let cobradoMotos = 0;
+    let totalCobrado = 0;
+
+    let atender = `Si`
+    let vehiculo = 0;
+
+    while(atender === `Si`|| atender ===`si`){
+        vehiculo = Number(prompt(`Que vehiculo esta pasando por el peaje: 1-Camion, 2-Camioneta, 3-Automovil, 4-Moto`));
+
+        switch(vehiculo){
+            case 1:{
+                cantidadCamion ++;
+                cobradoCamion += peajeCamion;
+
+                break;
+            }
+
+            case 2:{
+                cantidadCamioneta ++;
+                cobradoCamioneta += peajeCamioneta;
+
+                break;
+            }
+
+            case 3:{
+                cantidadAutomovil ++;
+                cobradoAutomovil += peajeAutomovil;
+
+                break;
+            }
+
+            case 4:{
+                cantidadMotos ++;
+                cobradoMotos += peajeMotos;
+
+                break;
+            }
+
+            default:{
+                console.log(`opcion invalida`);
+            }
+        }
+
+        atender = prompt(`desea atender el vehiculo? [Si/No]`);
+    }
+    
+    totalCobrado = cobradoAutomovil + cobradoCamion + cobradoMotos + cobradoCamioneta
+
+    console.log(`Pasaron ${cantidadAutomovil} autos`);
+    console.log(`Se recaddudo: $${cobradoAutomovil} de los autos`);
+    
+    console.log(`Pasaron ${cantidadCamioneta} camionetas`);
+    console.log(`Se recaddudo: $${cobradoCamioneta} de las camionetas`);
+    
+    console.log(`Pasaron ${cantidadCamion} camiones`);
+    console.log(`Se recaddudo: $${cobradoCamion} de los camiones`);
+    
+    console.log(`Pasaron ${cantidadMotos} motos`);
+    console.log(`Se recaddudo: $${cobradoMotos} de las motos`);
+
+    if(cantidadCamioneta>cantidadAutomovil){
+        console.log(`Pasaron mas camionetas que autos con un total de ${cantidadAutomovil} y ${cantidadCamioneta}`);
+    }
+    else if(cantidadAutomovil>cantidadCamioneta){
+        console.log(`pasaron mas autos que camionetas con un total de ${cantidadAutomovil} y ${cantidadCamioneta}`);
+    }
+    else{
+        console.log(`Pasaron la misma cantidad de autos y vehiculos`);
+    }
 }
