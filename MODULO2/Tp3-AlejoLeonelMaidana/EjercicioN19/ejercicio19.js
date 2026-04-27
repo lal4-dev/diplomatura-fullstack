@@ -26,7 +26,7 @@ window.onload = () =>{
     idPrecioProducto.oninput = ()=>{
         estadoAplicacion.precio = Number(idPrecioProducto.value);
         funcionGuardarEstado(estadoAplicacion);
-        console.log(estadoAplicacion)
+        //console.log(estadoAplicacion) -> para saber si funcionaba bien el guardarEstado
     }
 
     idGanaciaProducto.oninput = () =>{
