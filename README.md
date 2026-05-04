@@ -17,4 +17,6 @@
 ## Tp13 - Listo
 
 # Modulo 2
-## Tp1 - 
+## Tp1 - Listo
+## Tp2 - Listo
+## Tp3 - 

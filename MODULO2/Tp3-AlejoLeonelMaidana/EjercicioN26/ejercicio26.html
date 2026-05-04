@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio26</title>
+</head>
+<body>
+    <h1>Calcular dosis de insulina</h1>
+
+    <label for="idNivelGlucosa">Ingrese el nivel de glucosa en sangre del paciente: </label>
+    <input type="number" id="idNivelGlucosa">
+
+    <label for="idPesoCorporal">Ingrese el peso corporal del paciente(Kg): </label>
+    <input type="number" id="idPesoCorporal">
+
+    <p>
+        Seleccione el tipo de diabetes del paciente:
+        <select id="idTipoDiabetes">
+            <option value="1">Tipo 1</option>
+            <option value="2">Tipo 2</option>
+        </select>
+    </p>
+
+    <p id="idRespuesta">
+        La dosis de insulina correcta es: 
+    </p>
+
+    <button id="idButtomCalcular">Calcular</button>
+
+    <script src="ejercicio26.js" type="module"></script>
+</body>
+</html>
