@@ -28,6 +28,6 @@ window.onload = () =>{
 
     idButtonCalcular.onclick = () =>{
         let cantidadVocales = funcionContarVocales(estadoAplicacionEjercicio27.parrafo);
-        idRespuesta.textContent = `El parrafo tiene un total de:${cantidadVocales} vocales`;
+        idRespuesta.textContent = `El parrafo tiene un total de: ${cantidadVocales} vocales`;
     }
 }

@@ -28,7 +28,7 @@ window.onload = () =>{
 
     idButtonCalcular.onclick = () =>{
         let tieneS = funcionContarS(estadoAplicacionEjercicio29.parrafo);
-        let respuesta = tieneS ? `Verdadadero` : `Falso`;
+        let respuesta = tieneS ? `Verdadero` : `Falso`;
 
         idRespuesta.textContent = `La propiedad es: ${respuesta} `
     }

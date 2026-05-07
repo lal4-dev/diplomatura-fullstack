@@ -28,6 +28,6 @@ window.onload = () =>{
 
     idButtonCalcular.onclick = () =>{
         let cantidadConsonantes = funcionContarConsonantes(estadoAplicacionEjercicio28.parrafo);
-        idRespuesta.textContent = `El parrafo tiene un total de:${cantidadConsonantes} consonantes`;
+        idRespuesta.textContent = `El parrafo tiene un total de: ${cantidadConsonantes} consonantes`;
     }
 }
