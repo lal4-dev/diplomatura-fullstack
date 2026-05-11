@@ -22,6 +22,8 @@ const funcionLlamadora = (fn,x)=>{
   return resultado;
 }
 
+const sueldosEnero = [3700,4100,25000]
+
 window.onload = ()=>{
 
   const idBtnParticularidades = document.querySelector("#idBtnParticularidades");
@@ -95,16 +97,38 @@ window.onload = ()=>{
 
     sueldosAlumnos.forEach(elemento => console.log(elemento));
 
+    productos.forEach((item, indice)=>{
+      console.log(`Id:${item.id}-Nombre:${item.nombre}`)
+    })
 
-
+    productos.forEach(producto=> console.log(`ID:${producto.id} - NOMBRE`));
   };
 
+  
   /********************** MAP EN VECTORES  *****************************/
 
   idBtnMap.onclick = ()=>{
   
     console.log("--- map ---");
 
+    let sueldosFebrero = sueldosEnero.map((sueldo)=>{
+      return (sueldo * 1.20);
+    });
+
+    console.log(sueldosEnero);
+    console.log(sueldosFebrero)
+
+
+    let productos2 = productos.map(productos =>{
+      console.log(productos);
+      const {id,nombre,precio} = productos;
+
+      console.log(id,nombre,precio)
+
+      return {id,nombre,precio};
+    });
+
+    console.log(productos2);
   };
   
   /********************** FIND EN VECTORES  *****************************/
@@ -112,6 +136,16 @@ window.onload = ()=>{
   idBtnFind.onclick = ()=>{
 
     console.log("--- metodo find ----");
+    let producto1 = productos.find((producto)=>{
+      if(producto.id===5){
+        return true;
+      }
+
+    });
+
+    let producto2 = producto.find(producto => producto.id ===7);
+
+    let producto3 = producto.find(producto => producto.precio > 10000);
 
   };
 
@@ -120,7 +154,19 @@ window.onload = ()=>{
   idBtnFilter.onclick = ()=>{
 
     console.log("--- metodo filter ---");
- 
+
+    let vectorDeProducto = producto.filter((productos)=>{
+      if(productos.precio > 11000){
+        return true;
+      }
+      else{
+        return false;
+      }
+    });
+    console.log(vectorDeProducto);
+
+    let vectorDeProductos2 = productos.filter(producto => producto.precio>11000);
+    console.log(vectorDeProductos2);
   };
 
   /********************** SOME EN VECTORES  *****************************/
@@ -128,6 +174,8 @@ window.onload = ()=>{
   idBtnSome.onclick = ()=>{
 
     console.log("--- metodo some ---");
+    let resultadoSome = productos.some(producto => producto.precio < 9500);
+    console.log(resultadoSome)
 
   };
 
@@ -136,6 +184,8 @@ window.onload = ()=>{
   idBtnEvery.onclick = ()=>{
 
     console.log("--- metodo every ---");
+    let resultadoEvery = productos.every(producto => producto.precio>500);
+    console.log(resultadoEvery);
 
   };
 
