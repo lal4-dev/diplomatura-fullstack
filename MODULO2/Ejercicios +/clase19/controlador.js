@@ -103,15 +103,15 @@ window.onload = function () {
        en una sola línea, directamente como variables
        sin repetir el nombre del objeto cada vez */
 
-   const datosSecretaria = {
+      const datosSecretaria = {
       dni: 45789932,
       apellido:"lopez",
       nombreCompleto:"fernanda"
-   }
+      }
 
-   console.log(datosSecretaria.apellido);
+      console.log(datosSecretaria.apellido);
    
-   const {dni,apellido,nombreCompleto} = datosSecretaria;
+      const {dni,apellido,nombreCompleto} = datosSecretaria;
 
 
 
@@ -126,13 +126,17 @@ window.onload = function () {
     const { nombre, precio, categoria } = producto;
 
     console.log("Destructuring:", nombre, precio, categoria);
-  };
+   };
 
   idBoton3.onclick = () => {
     console.clear();
     console.log("---- Botón 3 - Objetos: renombrar variable al destructurar ----");
 
-   
+    const empleado1 = {legajo:707,apellido:"LOPEZ JORGE", domicilio:"VILLA PARQUE"};
+    const {legajo,domicilio="SIN DATOS"}=empleado1;
+
+    console.log(legajo);
+    console.log(domicilio);
 
 
     /* Al destructurar puedo renombrar la variable usando : (dos puntos)
