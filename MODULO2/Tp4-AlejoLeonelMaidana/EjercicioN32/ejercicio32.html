@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 32 - Panel de Control</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="tailwind.config.js"></script>
+</head>
+<body class="bg-[#121212] text-gray-200 min-h-screen font-sans p-6 md:p-10">
+
+    <div class="max-w-4xl mx-auto bg-[#1a1a1a] p-6 rounded-xl border border-gray-800 shadow-2xl">
+        
+        <h2 class="text-2xl md:text-3xl font-extrabold text-yerba mb-6 tracking-wide uppercase border-b border-gray-800 pb-3">
+            Listado de Alumnos
+        </h2>
+
+        <div class="mb-6">
+            <p class="text-sm text-gray-400 mb-2 font-semibold">Generar por Cohorte:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <button id="idButtonCohorte1" class="bg-transparent hover:bg-yerba text-yerba hover:text-black border border-yerba font-bold py-2 px-3 rounded transition duration-200 text-sm">Cohorte 1</button>
+                <button id="idButtonCohorte2" class="bg-transparent hover:bg-yerba text-yerba hover:text-black border border-yerba font-bold py-2 px-3 rounded transition duration-200 text-sm">Cohorte 2</button>
+                <button id="idButtonCohorte3" class="bg-transparent hover:bg-yerba text-yerba hover:text-black border border-yerba font-bold py-2 px-3 rounded transition duration-200 text-sm">Cohorte 3</button>
+                <button id="idButtonCohorte4" class="bg-transparent hover:bg-yerba text-yerba hover:text-black border border-yerba font-bold py-2 px-3 rounded transition duration-200 text-sm">Cohorte 4</button>
+            </div>
+        </div>
+
+        <hr class="border-gray-800 my-5">
+        
+        <div class="mb-6">
+            <button id="idButtonTodos" class="w-full bg-yerba hover:bg-yerbaOscuro text-black font-extrabold py-3 px-4 rounded-lg shadow-md transition duration-200 uppercase tracking-wider">
+                Generar TODOS los alumnos
+            </button>
+        </div>
+
+        <hr class="border-gray-800 my-5">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <button id="idButtonAprobados" class="bg-[#1e291b] hover:bg-[#273a22] text-green-400 border border-green-900 font-bold py-2 px-4 rounded transition duration-200">
+                Ver Aprobados (> 5)
+            </button>
+            <button id="idButtonDesaprobados" class="bg-[#2c1a1a] hover:bg-[#3d2222] text-red-400 border border-red-900 font-bold py-2 px-4 rounded transition duration-200">
+                Ver Desaprobados (<= 5)
+            </button>
+            <button id="idButtonOrdenar" class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded transition duration-200">
+                Ordenar por Nota (↑)
+            </button>
+        </div>
+
+        <hr class="border-gray-800 my-5">
+        
+        <div class="bg-[#222] p-4 rounded-lg border border-gray-800 flex flex-col sm:flex-row gap-3 items-center mb-6">
+            <label for="idInputDni" class="text-sm font-bold text-gray-300 whitespace-nowrap">Buscar por DNI:</label>
+            <input type="text" id="idInputDni" placeholder="Ingrese DNI" class="w-full bg-[#121212] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-yerba transition">
+            <button id="idButtonBuscar" class="w-full sm:w-auto bg-yerba hover:bg-yerbaOscuro text-black font-bold py-2 px-4 rounded transition duration-200 whitespace-nowrap">
+                Buscar (find)
+            </button>
+        </div>
+
+        <hr class="border-gray-800 my-5">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <button id="idButtonContarAprobadosA" class="bg-transparent hover:bg-gray-800 text-gray-300 border border-gray-700 font-medium py-2 px-3 rounded text-sm transition duration-200">
+                Contar Aprobados (Reduce `if/else`)
+            </button>
+            <button id="idButtonContarAprobadosB" class="bg-transparent hover:bg-gray-800 text-gray-300 border border-gray-700 font-medium py-2 px-3 rounded text-sm transition duration-200">
+                Contar Aprobados (Reduce `ternario`)
+            </button>
+        </div>
+
+        <hr class="border-gray-800 my-6">
+
+        <div id="idContenedor1" class="bg-[#121212] border border-gray-800 rounded-lg p-4 min-h-[150px]">
+            <p class="text-xs uppercase tracking-wider text-gray-500 font-bold mb-3">Consola de visualización:</p>
+            <ul id="idContenedorLista" class="space-y-2 list-none text-gray-300 font-mono">
+                </ul>
+        </div>
+
+    </div>
+
+    <script src="controladorEjercicio32.js" type="module"></script>
+</body>
+</html>
