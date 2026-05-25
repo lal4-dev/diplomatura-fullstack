@@ -19,4 +19,5 @@
 # Modulo 2
 ## Tp1 - Listo
 ## Tp2 - Listo
-## Tp3 - 
+## Tp3 - Listo
+## Tp4 - Listo
