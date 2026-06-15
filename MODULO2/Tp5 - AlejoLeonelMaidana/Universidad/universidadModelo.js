@@ -5,7 +5,7 @@ const URLBrazil = `http://universities.hipolabs.com/search?country=Brazil`;
 
 
 export const funcionRecuperarUniversidades = async (pais)=>{
-    let datos = ``
+    let datos = []
 
     switch(pais){
         case 1:{
@@ -20,7 +20,8 @@ export const funcionRecuperarUniversidades = async (pais)=>{
         }
 
         default:{
-        
+            console.warn(`No se encontraron URLs para el país con ID: ${pais}`); //por si llega otto valor
+            break;
         }
     }
 

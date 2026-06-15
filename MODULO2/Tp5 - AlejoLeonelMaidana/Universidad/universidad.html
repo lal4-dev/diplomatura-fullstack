@@ -1,40 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universidades</title>
+    <title>Gestión de Universidades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Gestion de Universidades</h1>
+<body class="bg-zinc-950 p-8 font-sans text-zinc-200 min-h-screen">
+    
+    <div class="max-w-6xl mx-auto bg-zinc-900 p-8 rounded-xl shadow-2xl border border-zinc-800">
+        <h1 class="text-3xl font-bold text-lime-500 mb-6 border-b border-zinc-800 pb-4 tracking-tight">Gestión de Universidades</h1>
 
-    <select id="idSelectorPais">
-        <option value="1">Argentina</option>
-        <option value="2">Brazil</option>
-    </select>
+        <div class="flex items-end gap-4 mb-8 bg-zinc-950/50 p-5 rounded-lg border border-zinc-800">
+            <div class="flex flex-col">
+                <label for="idSelectorPais" class="text-sm font-semibold text-zinc-400 mb-2">Seleccionar País</label>
+                <select id="idSelectorPais" class="border border-zinc-700 rounded-md p-2.5 bg-zinc-800 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-lime-500 transition-shadow">
+                    <option value="1">Argentina</option>
+                    <option value="2">Brasil</option>
+                </select>
+            </div>
+            
+            <button id="idButtonUniversidadesRecuperar" class="bg-lime-600 hover:bg-lime-500 text-zinc-950 font-bold py-2.5 px-6 rounded-md shadow-[0_0_10px_rgba(132,204,22,0.15)] hover:shadow-[0_0_20px_rgba(132,204,22,0.3)] transition-all duration-300">
+                Recuperar Universidades
+            </button>
+        </div>
 
-    <hr>
-
-    <table border="1" id="idCuerpoTabla">
-        <thead>
-            <th>Pais</th>
-            <th>Nombre Universidad</th>
-            <th>Provincia</th>
-            <th>URL</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Argentina</td>
-                <td>UNIVERSIDAD NACIONAL DE CATAMARCA</td>
-                <td>CATAMARCA</td>
-                <td><a href="https://www.unca.edu.ar/" target="_blank">UNCA</a></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <br>
-
-    <button id="idButtonUniversidadesRecuperar">Recuperar Universidades</button>
+        <div class="overflow-x-auto rounded-lg shadow-lg border border-zinc-800 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">            <table class="min-w-full divide-y divide-zinc-800">
+                <thead class="bg-zinc-950/80">
+                    <tr>
+                        <th scope="col" class="py-4 pl-5 pr-3 text-left text-sm font-semibold text-zinc-300">País</th>
+                        <th scope="col" class="px-3 py-4 text-left text-sm font-semibold text-zinc-300">Nombre Universidad</th>
+                        <th scope="col" class="px-3 py-4 text-left text-sm font-semibold text-zinc-300">Provincia</th>
+                        <th scope="col" class="px-3 py-4 text-left text-sm font-semibold text-zinc-300">URL</th>
+                    </tr>
+                </thead>
+                <tbody id="idCuerpoTabla" class="divide-y divide-zinc-800 bg-zinc-900">
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script src="universidadControlador.js" type="module"></script>
 </body>
