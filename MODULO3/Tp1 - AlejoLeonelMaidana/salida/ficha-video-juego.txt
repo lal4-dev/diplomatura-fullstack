@@ -1,0 +1,12 @@
+
+FICHA DE VIDEOJUEGO:
+=============================
+    Estudiante: vale
+    Node.js: v26.5.0
+    Plataforma del Sistema: win32
+-----------------------------
+    Titulo: Fornite
+    Estudio: Epic Games
+    Año: 2017
+    Plataforma: PlayStation, PC, Android, Nintendo Switch, Xbox, Nube
+    Multijugador: Si
