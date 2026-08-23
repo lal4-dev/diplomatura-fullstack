@@ -1,6 +1,6 @@
 # 🚀 Mi Traza por la Diplomatura Full-Stack
 
->-[!IMPORTANT]
+> [!IMPORTANT]
 >## 🛠️ Tecnologías y Herramientas Aplicadas
 >*   **Frontend:** HTML5, CSS3, Tailwind CSS.
 >*   **JavaScript:** ES6+, Módulos, Async/Await, DOM Manipulation.
@@ -34,6 +34,7 @@
 *   ✅ **TP 3:** Completado
 
 ### 🟪🟥 Módulo 3: [Nombre del Tema del Módulo 3]
-*   🚧 **TP 1:** En progreso...
+*   ✅ **TP 1:** Completado
+*   🚧 **TP 2:** Sin iniciar...
 
 ---
