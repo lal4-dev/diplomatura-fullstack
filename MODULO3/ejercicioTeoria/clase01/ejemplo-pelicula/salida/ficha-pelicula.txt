@@ -1,0 +1,7 @@
+FICHA DE PELICULA
+==========================
+Titulo: Horizonte Infinito
+Direccion: Alex Rivera
+Año: 2024
+Generos: Ciencia ficcion, Aventura
+Estado: Disponible

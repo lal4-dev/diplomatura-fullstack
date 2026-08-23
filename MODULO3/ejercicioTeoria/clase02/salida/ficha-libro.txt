@@ -1,0 +1,6 @@
+FICHA DE LIBRO:
+    Titulo: La ciudad de las nubes
+    Autoria: Mariana Solis
+    Año: 2022
+    Generos: Fantaisa, Aventura
+    Estado: No disponible
