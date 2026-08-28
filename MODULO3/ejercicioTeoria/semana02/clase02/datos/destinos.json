@@ -1,0 +1,24 @@
+[
+    {
+        "ciudad":"Mendoza",
+        "pais":"Argentina",
+        "temporada":"Otoño",
+        "atractivos":["Parque General San Martin","Reserva Villavicencio"],
+        "requiereReserva":false
+    },
+    {
+        "ciudad":"Cusco",
+        "pais":"Peru",
+        "temporada":"Estacion Seca",
+        "atractivos":["Centro Historico","Valle Sagrado"],
+        "requiereReserva":true
+    },
+    {
+        "ciudad":"Colonia del Sacramento",
+        "pais":"Uruguay",
+        "temporada":"Primavera",
+        "atractivos":["Barrio Historico","Rambla de Colonia"],
+        "requiereReserva":false
+
+    }
+]

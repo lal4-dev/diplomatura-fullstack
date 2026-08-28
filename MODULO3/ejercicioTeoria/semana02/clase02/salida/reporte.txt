@@ -1,0 +1,20 @@
+Catalago de destinos turisticos:
+        ====================================
+        1, Mendoza,Argentina
+        temporada recomendada: Otoño
+        atractivos: Parque General San Martin, Reserva Villavicencio
+        organizacion: No requiere reserva previa
+        
+2, Cusco,Peru
+        temporada recomendada: Estacion Seca
+        atractivos: Centro Historico, Valle Sagrado
+        organizacion: No requiere reserva previa
+        
+3, Colonia del Sacramento,Uruguay
+        temporada recomendada: Primavera
+        atractivos: Barrio Historico, Rambla de Colonia
+        organizacion: No requiere reserva previa
+        
+        ====================================
+        Total de destinos: 3
+        
