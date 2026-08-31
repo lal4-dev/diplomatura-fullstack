@@ -1,0 +1,41 @@
+[
+    {
+        "titulo":"Catan",
+        "editorial":"Devir",
+        "anio":1995,
+        "jugadoresMin":3,
+        "jugadoresMax":4,
+        "categorias":["Estrategia","Negociacion","Gestion de recursos"],
+        "disponible":true
+    },
+
+    {
+        "titulo":"Ticket to ride",
+        "editorial":"Days of wonder",
+        "anio":2004,
+        "jugadoresMin":2,
+        "jugadoresMax":5,
+        "categorias":["Familiar","Rutas","Trenes"],
+        "disponible":false
+    },
+
+    {
+        "titulo":"Truco",
+        "editorial":"Tradicional / dominio publico",
+        "anio":1800,
+        "jugadoresMin":2,
+        "jugadoresMax":6,
+        "categorias":["Estrategias","Cartas"],
+        "disponible":true
+    },
+    
+    {
+        "titulo":"UNO",
+        "editorial":"Mattel",
+        "anio":1971,
+        "jugadoresMin":2,
+        "jugadoresMax":10,
+        "categorias":["Familiar","Cartas"],
+        "disponible":true
+    }
+]

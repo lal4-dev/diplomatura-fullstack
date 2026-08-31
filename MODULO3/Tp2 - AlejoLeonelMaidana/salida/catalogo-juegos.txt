@@ -1,0 +1,30 @@
+CATALAGO DE JUEGOS DE MESA
+Cantida de juegos: 4
+1.Catan
+    Editorial y año: Devir, 1995
+    Participantes: 3 a 4
+    Categorias: Estrategia, Negociacion, Gestion de recursos
+    Estado: Disponible 
+
+    
+2.Ticket to ride
+    Editorial y año: Days of wonder, 2004
+    Participantes: 2 a 5
+    Categorias: Familiar, Rutas, Trenes
+    Estado: No disponible 
+
+    
+3.Truco
+    Editorial y año: Tradicional / dominio publico, 1800
+    Participantes: 2 a 6
+    Categorias: Estrategias, Cartas
+    Estado: Disponible 
+
+    
+4.UNO
+    Editorial y año: Mattel, 1971
+    Participantes: 2 a 10
+    Categorias: Familiar, Cartas
+    Estado: Disponible 
+
+    
