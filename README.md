@@ -33,8 +33,9 @@
 *   ✅ **TP 2:** Completado
 *   ✅ **TP 3:** Completado
 
-### 🟪🟥 Módulo 3: [Nombre del Tema del Módulo 3]
+### 🟪🟥 Módulo 3: NodeJs
 *   ✅ **TP 1:** Completado
-*   🚧 **TP 2:** Sin iniciar...
+*   ✅ **TP 2:** Completado
+*   🚧 **TP 3:** Sin iniciar...
 
 ---
