@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tarta de verduras",
+    "dificultad": "Media",
+    "tiempoMinutos": 55,
+    "ingrediente": [
+      "Masa de tarta",
+      "Zapallito",
+      "Cebolla",
+      "Huevo"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Ensalada de garbanzos",
+    "dificultad": "Facil",
+    "tiempoMinutos": 20,
+    "ingrediente": [
+      "Garbanzos",
+      "Pepino",
+      "Tomate",
+      "Limon"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Risotto de hongos",
+    "dificultad": "Media",
+    "tiempoMinutos": 45,
+    "ingrediente": [
+      "Arroz",
+      "Champiñones",
+      "Queso parmesano",
+      "Caldo de verduras"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Tarta de choclo",
+    "dificultad": "Media",
+    "tiempoMinutos": 50,
+    "ingrediente": [
+      "Masa de tarta",
+      "Choclo en granos",
+      "Cebolla",
+      "Queso cremoso"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Pan",
+    "dificultad": "Facil",
+    "tiempoMinutos": 120,
+    "ingrediente": [
+      "Harina",
+      "Agua",
+      "Levadura",
+      "Sal"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Pizza",
+    "dificultad": "Facil",
+    "tiempoMinutos": 25,
+    "ingrediente": [
+      "Masa de",
+      "Queso",
+      "Salsa",
+      "Huevo"
+    ]
+  }
+]
