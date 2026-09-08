@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "nombre": "Violin",
+        "familia": "Cuerdas",
+        "origen": "Italia",
+        "descripcion": "Instrumento de cuerda frotada",
+        "disponible": true
+    },
+    {
+        "id": 2,
+        "nombre": "Guitarra",
+        "familia": "Cuerdas",
+        "origen": "España",
+        "descripcion": "Instrumento de cuerda pulsada",
+        "disponible": false
+    },
+    {
+        "id": 3,
+        "nombre": "Flauta",
+        "familia": "Viento",
+        "origen": "Alemania",
+        "descripcion": "Instrumento de viento madera",
+        "disponible": true
+    },
+    {
+        "id": 4,
+        "nombre": "Trompeta",
+        "familia": "Viento",
+        "origen": "Alemania",
+        "descripcion": "Instrumento de viento metal",
+        "disponible": true
+    },
+    {
+        "id": 5,
+        "nombre": "Piano",
+        "familia": "Teclado",
+        "origen": "Italia",
+        "descripcion": "Instrumento de teclado",
+        "disponible": true
+    }
+]
