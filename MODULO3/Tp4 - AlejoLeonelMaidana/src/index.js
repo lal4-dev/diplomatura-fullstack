@@ -12,19 +12,21 @@ async function main() {
 
     app.set("view engine", "ejs");
     app.set("views", path.join(__dirname, "..", "views"));
+
     app.use(expressLayouts);
     app.set("layout", "layouts/main");
+
     app.use(express.static(path.join(__dirname, "..", "public")));
     app.use(express.urlencoded({ extended: false }));
 
-    // Ruta principal
+    // ruta principal
     app.get("/", (req, res) => {
         res.render("inicio", {
             titulo: "Mascotas en Adopción",
         });
     });
 
-    // Listado de mascotas
+    // listado de mascotas
     app.get("/mascotas", (req, res) => {
         res.render("mascotas/lista", {
             titulo: "Catálogo de Mascotas",
@@ -32,7 +34,6 @@ async function main() {
         });
     });
 
-    // Formulario para nueva mascota (declarado antes de /:id)
     app.get("/mascotas/nueva", (req, res) => {
         res.render("mascotas/nueva", {
             titulo: "Registrar Mascota",
@@ -41,7 +42,7 @@ async function main() {
         });
     });
 
-    // Detalle de una mascota por identificador
+    // detalle de una mascota 
     app.get("/mascotas/:id", (req, res) => {
         const id = Number(req.params.id);
         const mascota = mascotas.find((elemento) => elemento.id === id);
@@ -59,7 +60,7 @@ async function main() {
         });
     });
 
-    // Procesamiento del formulario de creación
+    // formulario de creación
     app.post("/mascotas", (req, res) => {
         const { nombre, especie, edad, estado, descripcion } = req.body;
         const nombreLimpio = String(nombre ?? "").trim();
