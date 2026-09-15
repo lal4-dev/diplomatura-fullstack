@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+  <rect width="64" height="64" rx="16" fill="#2d6a4f"/>
+  <!-- Cabeza de mascota amigable -->
+  <circle cx="32" cy="34" r="15" fill="#fefae0"/>
+  <!-- Oreja izquierda -->
+  <path d="M20 22 C16 16, 17 29, 21 28 Z" fill="#ddb892"/>
+  <!-- Oreja derecha -->
+  <path d="M44 22 C48 16, 47 29, 43 28 Z" fill="#ddb892"/>
+  <!-- Ojos -->
+  <circle cx="27" cy="32" r="2" fill="#26231f"/>
+  <circle cx="37" cy="32" r="2" fill="#26231f"/>
+  <!-- Nariz y boca -->
+  <ellipse cx="32" cy="36" rx="2.5" ry="1.8" fill="#bc4749"/>
+  <path d="M30.5 38 C31.5 39.5, 32.5 39.5, 33.5 38" fill="none" stroke="#26231f" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Huellita corazón arriba -->
+  <path d="M32 16 C30 13, 27 14.5, 27 16.5 C27 18.5, 32 21, 32 21 C32 21, 37 18.5, 37 16.5 C37 14.5, 34 13, 32 16 Z" fill="#f4a261"/>
+</svg>

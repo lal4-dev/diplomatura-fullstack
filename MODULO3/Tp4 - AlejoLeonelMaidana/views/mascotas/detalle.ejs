@@ -1,0 +1,29 @@
+<article class="detalle">
+    <p class="etiqueta">
+        <%= mascota.especie %> · <%= mascota.estado %>
+    </p>
+    <h1>
+        <%= mascota.nombre %>
+    </h1>
+    <div class="detalle-img-container">
+        <img src="<%= mascota.imagen %>" alt="Ilustración de la mascota <%= mascota.nombre %>" width="80" height="80">
+    </div>
+    <p><strong>Especie:</strong>
+        <%= mascota.especie %>
+    </p>
+    <p><strong>Edad:</strong>
+        <%= mascota.edad===0 ? "Menor a 1 año (Cachorro)" : (mascota.edad===1 ? "1 año" : mascota.edad + " años" ) %>
+    </p>
+    <p>
+        <strong>Estado:</strong>
+        <span class="badge badge-<%= mascota.estado.toLowerCase().replace(/\s+/g, '-') %>">
+            <%= mascota.estado %>
+        </span>
+    </p>
+    <p><strong>Descripción:</strong>
+        <%= mascota.descripcion %>
+    </p>
+    <div class="acciones">
+        <a class="boton" href="/mascotas">Volver al catálogo</a>
+    </div>
+</article>

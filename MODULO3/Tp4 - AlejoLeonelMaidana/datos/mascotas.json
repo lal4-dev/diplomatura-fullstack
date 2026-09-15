@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "nombre": "Bruno",
+        "especie": "Perro",
+        "edad": 2,
+        "descripcion": "Bruno es un perro mestizo de tamaño mediano, muy cariñoso, sociable y lleno de energía.",
+        "estado": "Adoptada",
+        "imagen": "/img/mascota.svg"
+    },
+    {
+        "id": 2,
+        "nombre": "Kira",
+        "especie": "Gato",
+        "edad": 3,
+        "descripcion": "Kira es una gata tranquila y mimosa que disfruta dormir al sol y recibir caricias.",
+        "estado": "En adopción",
+        "imagen": "/img/mascota.svg"
+    },
+    {
+        "id": 3,
+        "nombre": "Sammy",
+        "especie": "Loro",
+        "edad": 5,
+        "descripcion": "Sammy es un loro simpático y muy activo que busca un hogar responsable con amplio espacio.",
+        "estado": "En adopción",
+        "imagen": "/img/mascota.svg"
+    },
+    {
+        "id": 4,
+        "nombre": "Morgan",
+        "especie": "Hamster",
+        "edad": 1,
+        "descripcion": "Morgan es un pequeño roedor curioso y dócil, ideal para familias con dedicación y cuidado.",
+        "estado": "Reservada",
+        "imagen": "/img/mascota.svg"
+    },
+    {
+        "id": 5,
+        "nombre": "Milo",
+        "especie": "Perro",
+        "edad": 0,
+        "descripcion": "Milo es un cachorro juguetón de tres meses rescatado recientemente, listo para comenzar su vacunación.",
+        "estado": "En adopción",
+        "imagen": "/img/mascota.svg"
+    }
+]

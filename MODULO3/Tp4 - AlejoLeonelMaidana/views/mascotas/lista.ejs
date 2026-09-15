@@ -1,0 +1,46 @@
+<header class="cabecera-pagina">
+    <div>
+        <p class="etiqueta">CATÁLOGO</p>
+        <h1>
+            <%= titulo %>
+        </h1>
+    </div>
+    <a class="boton" href="/mascotas/nueva">Registrar mascota</a>
+</header>
+
+<% if (mascotas.length===0) { %>
+    <section class="estado">
+        <p class="etiqueta">SIN REGISTROS</p>
+        <h2>No hay mascotas disponibles</h2>
+        <p>En este momento no hay mascotas registradas para adopción en el catálogo.</p>
+        <a class="boton" href="/mascotas/nueva">Registrar una mascota</a>
+    </section>
+    <% } else { %>
+        <section class="grilla" aria-label="Mascotas disponibles para adopción">
+            <% mascotas.forEach((mascota)=> { %>
+                <article class="tarjeta">
+                    <div class="tarjeta-icono">
+                        <img src="<%= mascota.imagen %>" alt="Ilustración de <%= mascota.nombre %>" width="48"
+                            height="48">
+                    </div>
+                    <p class="etiqueta">
+                        <%= mascota.especie %>
+                    </p>
+                    <h2>
+                        <%= mascota.nombre %>
+                    </h2>
+                    <p><strong>Edad:</strong>
+                        <%= mascota.edad===0 ? "Menor a 1 año (Cachorro)" : (mascota.edad===1 ? "1 año" : mascota.edad
+                            + " años" ) %>
+                    </p>
+                    <p>
+                        <strong>Estado:</strong>
+                        <span class="badge badge-<%= mascota.estado.toLowerCase().replace(/\s+/g, '-') %>">
+                            <%= mascota.estado %>
+                        </span>
+                    </p>
+                    <a href="/mascotas/<%= mascota.id %>">Ver detalle</a>
+                </article>
+                <% }) %>
+        </section>
+        <% } %>

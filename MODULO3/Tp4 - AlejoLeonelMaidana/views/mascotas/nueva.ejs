@@ -1,0 +1,52 @@
+<section class="panel-formulario">
+    <p class="etiqueta">NUEVO INGRESO</p>
+    <h1>
+        <%= titulo %>
+    </h1>
+
+    <% if (error) { %>
+        <p class="error" role="alert">
+            <%= error %>
+        </p>
+        <% } %>
+
+            <form action="/mascotas" method="post" class="formulario">
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" name="nombre" type="text" value="<%= valores.nombre ?? '' %>" required>
+                </div>
+
+                <div>
+                    <label for="especie">Especie</label>
+                    <input id="especie" name="especie" type="text" placeholder="Ej: Perro, Gato, Ave..."
+                        value="<%= valores.especie ?? '' %>" required>
+                </div>
+
+                <div>
+                    <label for="edad">Edad (años)</label>
+                    <input id="edad" name="edad" type="number" min="0" step="1" placeholder="0 para menores de un año"
+                        value="<%= valores.edad ?? '' %>" required>
+                </div>
+
+                <div>
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" required>
+                        <option value="">Seleccione un estado...</option>
+                        <option value="En adopción" <%=valores.estado==='En adopción' ? 'selected' : '' %>>En adopción
+                        </option>
+                        <option value="Reservada" <%=valores.estado==='Reservada' ? 'selected' : '' %>>Reservada
+                        </option>
+                        <option value="Adoptada" <%=valores.estado==='Adoptada' ? 'selected' : '' %>>Adoptada</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" rows="4"
+                        placeholder="Breve reseña sobre personalidad y cuidados..."
+                        required><%= valores.descripcion ?? '' %></textarea>
+                </div>
+
+                <button type="submit">Guardar mascota</button>
+            </form>
+</section>
