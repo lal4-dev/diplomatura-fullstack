@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Suculenta",
+        "tipo": "Exterior",
+        "luz": "Directa",
+        "riego": "Escaso",
+        "descripcion": "Planta pequeña que almacena agua en sus hojas"
+    },
+    {
+        "id": 2,
+        "nombre": "Orquidea",
+        "tipo": "Interior",
+        "luz": "Indirecta",
+        "riego": "Moderado",
+        "descripcion": "Flores coloridas y exóticas"
+    },
+    {
+        "id": 3,
+        "nombre": "Sansevieria",
+        "tipo": "Interior",
+        "luz": "Baja",
+        "riego": "Escaso",
+        "descripcion": "Follaje vertical y resistente"
+    }
+]

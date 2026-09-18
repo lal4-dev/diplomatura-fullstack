@@ -1,0 +1,39 @@
+<h1>
+    <%= titulo %>
+</h1>
+
+<% if(error) { %>
+    <p class="error" role="alert">
+        <%= error %>
+    </p>
+    <% } %>
+
+        <form method="post" action="/plantas" class="formulario">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" required value="<%= valores.nombre || '' %>">
+
+            <label for="tipo">Tipo</label>
+            <select name="tipo" id="tipo">
+                <option value="">Selecciona un tipo</option>
+                <option value="Interior" <%=valores.tipo==='Interior' ? 'selected' : '' %> >Interior</option>
+                <option value="Exterior" <%=valores.tipo==='Exterior' ? 'selected' : '' %> >Exterior</option>
+            </select>
+            <label for="riego">Riego</label>
+            <select name="riego" id="riego">
+                <option value="">Selecciona un tipo</option>
+                <option value="Diario">Diario</option>
+                <option value="Semanal">Semanal</option>
+                <option value="Quincenal">Quincenal</option>
+                <option value="Mensual">Mensual</option>
+            </select>
+            <label for="luz">Luz</label>
+            <select name="luz" id="luz">
+                <option value="">Selecciona un tipo</option>
+                <option value="Directa">Directa</option>
+                <option value="Indirecta">Indirecta</option>
+                <option value="Baja">Baja</option>
+            </select>
+            <label for="descripcion">Descripcion</label>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= valores.descripcion || ''%></textarea>
+            <button type="submit" class="boton">Guardar</button>
+        </form>
