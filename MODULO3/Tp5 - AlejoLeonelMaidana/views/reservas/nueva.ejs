@@ -1,0 +1,132 @@
+<div class="cabecera-area">
+  <div class="titulo-grupo">
+    <span class="insignia-seccion"><%= seccion %></span>
+    <h1 class="titulo-pagina">Reservar Sala de Estudio</h1>
+    <p class="subtitulo-pagina">Completá los datos requeridos para registrar un turno temporal.</p>
+  </div>
+</div>
+
+<div class="panel-formulario">
+  <% if (error) { %>
+    <div class="mensaje-error" role="alert">
+      <span class="icono-alerta">⚠️</span>
+      <div class="contenido-alerta">
+        <strong>Error en la solicitud:</strong>
+        <p><%= error %></p>
+      </div>
+    </div>
+  <% } %>
+
+  <form action="/reservas" method="POST" class="formulario-reserva" novalidate>
+    <div class="campo-grupo">
+      <label for="estudiante" class="etiqueta-campo">
+        Estudiante / Solicitante <span class="campo-requerido">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="estudiante" 
+        name="estudiante" 
+        class="control-formulario" 
+        placeholder="Ej. Sofía Martínez"
+        value="<%= valores.estudiante || '' %>"
+        required
+      >
+      <small class="ayuda-campo">Ingresá tu nombre y apellido completos.</small>
+    </div>
+
+    <div class="campo-grupo">
+      <label for="email" class="etiqueta-campo">
+        Correo Institucional <span class="campo-requerido">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        class="control-formulario" 
+        placeholder="nombre@universidad.edu.ar"
+        value="<%= valores.email || '' %>"
+        required
+      >
+      <small class="ayuda-campo">Debe incluir un '@' y ser una dirección de contacto válida.</small>
+    </div>
+
+    <div class="campo-fila">
+      <div class="campo-grupo">
+        <label for="sala" class="etiqueta-campo">
+          Sala de Estudio <span class="campo-requerido">*</span>
+        </label>
+        <select id="sala" name="sala" class="control-formulario" required>
+          <option value="">-- Seleccioná una sala --</option>
+          <% salasPermitidas.forEach((salaOpt) => { %>
+            <option 
+              value="<%= salaOpt %>" 
+              <%= valores.sala === salaOpt ? 'selected' : '' %>
+            >
+              <%= salaOpt %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+
+      <div class="campo-grupo">
+        <label for="turno" class="etiqueta-campo">
+          Turno Horario <span class="campo-requerido">*</span>
+        </label>
+        <select id="turno" name="turno" class="control-formulario" required>
+          <option value="">-- Seleccioná un turno --</option>
+          <% turnosPermitidos.forEach((turnoOpt) => { %>
+            <option 
+              value="<%= turnoOpt %>" 
+              <%= valores.turno === turnoOpt ? 'selected' : '' %>
+            >
+              <%= turnoOpt %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+    </div>
+
+    <div class="campo-fila">
+      <div class="campo-grupo">
+        <label for="fecha" class="etiqueta-campo">
+          Fecha de la Reserva <span class="campo-requerido">*</span>
+        </label>
+        <input 
+          type="date" 
+          id="fecha" 
+          name="fecha" 
+          class="control-formulario" 
+          value="<%= valores.fecha || '' %>"
+          required
+        >
+      </div>
+
+      <div class="campo-grupo">
+        <label for="personas" class="etiqueta-campo">
+          Cantidad de Personas <span class="campo-requerido">*</span>
+        </label>
+        <input 
+          type="number" 
+          id="personas" 
+          name="personas" 
+          class="control-formulario" 
+          min="1" 
+          max="6" 
+          placeholder="1 a 6"
+          value="<%= valores.personas !== undefined ? valores.personas : '' %>"
+          required
+        >
+        <small class="ayuda-campo">Capacidad permitida: entre 1 y 6 personas.</small>
+      </div>
+    </div>
+
+    <div class="formulario-acciones">
+      <button type="submit" class="boton boton-primario">Confirmar y registrar reserva</button>
+      <a href="/reservas" class="boton boton-cancelar">Cancelar</a>
+    </div>
+  </form>
+</div>
+
+<div class="barra-navegacion-inferior">
+  <a href="/reservas" class="enlace-volver">&larr; Volver al listado de reservas</a>
+</div>

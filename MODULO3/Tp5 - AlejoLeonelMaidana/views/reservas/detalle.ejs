@@ -1,0 +1,54 @@
+<div class="cabecera-area">
+  <div class="titulo-grupo">
+    <span class="insignia-seccion"><%= seccion %></span>
+    <h1 class="titulo-pagina">Detalle de Reserva #<%= reserva.id %></h1>
+    <p class="subtitulo-pagina">Comprobante informativo de la reserva registrada en el sistema.</p>
+  </div>
+</div>
+
+<article class="panel-detalle">
+  <div class="panel-detalle-cabecera">
+    <div class="detalle-id-badge">
+      <span>Turno ID</span>
+      <strong>#<%= reserva.id %></strong>
+    </div>
+    <span class="insignia-turno turno-<%= reserva.turno.toLowerCase() %>"><%= reserva.turno %></span>
+  </div>
+
+  <div class="detalle-grid">
+    <div class="detalle-dato">
+      <span class="etiqueta-dato">Estudiante solicitante</span>
+      <span class="valor-dato valor-destacado"><%= reserva.estudiante %></span>
+    </div>
+
+    <div class="detalle-dato">
+      <span class="etiqueta-dato">Correo electrónico</span>
+      <span class="valor-dato"><%= reserva.email %></span>
+    </div>
+
+    <div class="detalle-dato">
+      <span class="etiqueta-dato">Espacio asignado</span>
+      <span class="valor-dato">🏛️ <%= reserva.sala %></span>
+    </div>
+
+    <div class="detalle-dato">
+      <span class="etiqueta-dato">Fecha programada</span>
+      <span class="valor-dato">📅 <%= reserva.fecha %></span>
+    </div>
+
+    <div class="detalle-dato">
+      <span class="etiqueta-dato">Franja horaria / Turno</span>
+      <span class="valor-dato">⏰ <%= reserva.turno %></span>
+    </div>
+
+    <div class="detalle-dato">
+      <span class="etiqueta-dato">Asistentes previstos</span>
+      <span class="valor-dato">👥 <%= reserva.personas %> <%= reserva.personas === 1 ? 'persona' : 'personas' %></span>
+    </div>
+  </div>
+
+  <div class="panel-detalle-pie">
+    <a href="/reservas" class="boton boton-secundario">&larr; Volver al listado</a>
+    <a href="/reservas/nueva" class="boton boton-primario">+ Cargar otra reserva</a>
+  </div>
+</article>
