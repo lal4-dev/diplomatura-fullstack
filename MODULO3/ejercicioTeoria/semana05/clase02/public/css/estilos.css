@@ -1,0 +1,569 @@
+/* ==========================================================================
+   VARIABLES BOTÁNICAS Y SISTEMA DE DISEÑO
+   ========================================================================== */
+:root {
+  /* Verdes botánicos */
+  --verde-oscuro: #1b4332;
+  --verde-bosque: #2d6a4f;
+  --verde-medio: #40916c;
+  --verde-claro: #52b788;
+  --verde-menta: #d8f3dc;
+  --verde-suave: #e8f5e9;
+
+  /* Tonos complementarios de cuidado */
+  --tierra: #7c4d3b;
+  --tierra-claro: #f4ebe6;
+  --solar: #b45309;
+  --solar-fondo: #fef3c7;
+  --agua: #0369a1;
+  --agua-fondo: #e0f2fe;
+
+  /* Fondos y Neutros */
+  --bg-cuerpo: #f5f7f4;
+  --bg-superficie: #ffffff;
+  --borde: #dce4dc;
+  --borde-suave: #e9f0e9;
+
+  /* Tipografía */
+  --texto-principal: #1f2923;
+  --texto-secundario: #4f6154;
+  --texto-mutado: #788c7e;
+  --fuente-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Radios y Sombras */
+  --radio-sm: 0.5rem;
+  --radio-md: 0.85rem;
+  --radio-lg: 1.25rem;
+  --radio-pill: 9999px;
+
+  --sombra-sm: 0 2px 8px rgba(27, 67, 50, 0.05);
+  --sombra-md: 0 6px 18px rgba(27, 67, 50, 0.08);
+  --sombra-lg: 0 14px 32px rgba(27, 67, 50, 0.12);
+
+  --transicion: 0.2s ease;
+}
+
+/* ==========================================================================
+   RESET GENERAL Y BASE
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-cuerpo);
+  color: var(--texto-principal);
+  font-family: var(--fuente-base);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--verde-oscuro);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  line-height: 1.3;
+}
+
+a {
+  color: var(--verde-bosque);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transicion);
+}
+
+a:hover {
+  color: var(--verde-oscuro);
+}
+
+/* ==========================================================================
+   LAYOUT Y CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.contenedor {
+  width: min(72rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+  flex: 1;
+  padding-block: 2.5rem;
+}
+
+/* ==========================================================================
+   ENCABEZADO (<header class="encabezado">)
+   ========================================================================== */
+.encabezado {
+  width: 100%;
+  background: var(--bg-superficie);
+  border-bottom: 1px solid var(--borde);
+  padding-block: 1rem;
+  padding-inline: max(1.25rem, calc((100% - 72rem) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--verde-oscuro);
+}
+
+.marca img {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  transition: transform var(--transicion);
+}
+
+.marca:hover img {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+.encabezado nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.encabezado nav a {
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radio-sm);
+  color: var(--texto-secundario);
+  font-weight: 600;
+  transition: all var(--transicion);
+}
+
+.encabezado nav a:hover {
+  color: var(--verde-oscuro);
+  background: var(--verde-suave);
+}
+
+/* ==========================================================================
+   SECCIÓN HERO (<section class="hero"> en inicio.ejs)
+   ========================================================================== */
+.hero {
+  max-width: 48rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: linear-gradient(135deg, var(--bg-superficie) 0%, #edf6ef 100%);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-md);
+  margin-bottom: 2rem;
+}
+
+.hero p:not(.etiqueta) {
+  font-size: 1.15rem;
+  color: var(--texto-secundario);
+  max-width: 38ch;
+  margin-bottom: 1.75rem;
+}
+
+/* ==========================================================================
+   ETIQUETAS BADGE (<p class="etiqueta">)
+   ========================================================================== */
+.etiqueta {
+  display: inline-block;
+  margin-bottom: 0.65rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radio-pill);
+  background: var(--verde-suave);
+  color: var(--verde-bosque);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--verde-menta);
+}
+
+/* ==========================================================================
+   CABECERA DE PÁGINA (<header class="cabecera-pagina"> en lista.ejs)
+   ========================================================================== */
+.cabecera-pagina {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.cabecera-pagina h1 {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   GRILLA Y TARJETAS DE PLANTAS (<section class="grilla"> y <article class="tarjeta-planta">)
+   ========================================================================== */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.75rem;
+}
+
+.tarjeta-planta {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  box-shadow: var(--sombra-sm);
+  transition: transform var(--transicion), box-shadow var(--transicion), border-color var(--transicion);
+  padding: 1.25rem;
+}
+
+.tarjeta-planta:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-lg);
+  border-color: var(--verde-claro);
+}
+
+/* Imagen de la planta */
+.tarjeta-planta img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  border-radius: calc(var(--radio-md) - 4px);
+  background: linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 60%, #95d5b2 100%);
+  margin-bottom: 1rem;
+}
+
+.tarjeta-planta h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+/* Metadatos de la planta (<div class="meta">) */
+.tarjeta-planta .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+/* Spans de cuidados dentro de .meta */
+.tarjeta-planta .meta span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radio-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--verde-suave);
+  color: var(--verde-bosque);
+  border: 1px solid var(--verde-menta);
+}
+
+/* Estilos semánticos para el segundo y tercer span (riego y luz) */
+.tarjeta-planta .meta span:nth-of-type(2) {
+  background: var(--agua-fondo);
+  color: var(--agua);
+  border-color: #bae6fd;
+}
+
+.tarjeta-planta .meta span:nth-of-type(3) {
+  background: var(--solar-fondo);
+  color: var(--solar);
+  border-color: #fde68a;
+}
+
+/* Botón "Ver cuidados" dentro de .meta */
+.tarjeta-planta .meta .boton-secundario {
+  width: 100%;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   VISTA DETALLE DE PLANTA (<article> en detalle.ejs)
+   ========================================================================== */
+.contenedor > article:not(.tarjeta-planta) {
+  max-width: 46rem;
+  padding: clamp(2rem, 5vw, 3.25rem);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-md);
+}
+
+.contenedor > article:not(.tarjeta-planta) h1 {
+  margin-bottom: 1rem;
+}
+
+/* Lista de descripción (<dl>, <dt>, <dd>) */
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.5rem;
+  row-gap: 0.85rem;
+  align-items: center;
+  margin-block: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-cuerpo);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-md);
+}
+
+dt {
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--verde-bosque);
+}
+
+dt::after {
+  content: ":";
+}
+
+dd {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--texto-principal);
+  background: var(--bg-superficie);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radio-pill);
+  display: inline-block;
+  width: fit-content;
+  border: 1px solid var(--borde-suave);
+}
+
+.contenedor > article:not(.tarjeta-planta) p:not(.etiqueta) {
+  font-size: 1.1rem;
+  color: var(--texto-secundario);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Enlace "Volver al catálogo" en detalle.ejs y estado.ejs */
+.contenedor > article:not(.tarjeta-planta) > a,
+.estado > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: var(--radio-sm);
+  background: var(--verde-suave);
+  color: var(--verde-bosque);
+  font-weight: 700;
+  border: 1.5px solid var(--verde-claro);
+  transition: all var(--transicion);
+}
+
+.contenedor > article:not(.tarjeta-planta) > a:hover,
+.estado > a:hover {
+  background: var(--verde-bosque);
+  color: #ffffff;
+  border-color: var(--verde-bosque);
+}
+
+/* ==========================================================================
+   FORMULARIO Y NUEVA PLANTA (<form class="formulario"> en nueva.ejs)
+   ========================================================================== */
+form.formulario {
+  max-width: 44rem;
+  padding: clamp(1.75rem, 5vw, 2.75rem);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-md);
+  display: grid;
+  gap: 1.15rem;
+}
+
+form.formulario label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  margin-bottom: -0.5rem;
+}
+
+form.formulario input,
+form.formulario select,
+form.formulario textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--borde);
+  border-radius: var(--radio-sm);
+  background: #ffffff;
+  color: var(--texto-principal);
+  font: inherit;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+form.formulario textarea {
+  resize: vertical;
+  min-height: 6.5rem;
+}
+
+form.formulario input:focus,
+form.formulario select:focus,
+form.formulario textarea:focus {
+  outline: none;
+  border-color: var(--verde-bosque);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.18);
+}
+
+form.formulario button.boton {
+  justify-self: start;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+.boton,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.4rem;
+  border: 0;
+  border-radius: var(--radio-sm);
+  background: var(--verde-bosque);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: var(--sombra-sm);
+  transition: all var(--transicion);
+}
+
+.boton:hover,
+button:hover {
+  background: var(--verde-oscuro);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: var(--sombra-md);
+}
+
+.boton-secundario {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--radio-sm);
+  background: var(--bg-superficie);
+  color: var(--verde-bosque);
+  border: 1.5px solid var(--borde);
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all var(--transicion);
+}
+
+.boton-secundario:hover {
+  background: var(--verde-suave);
+  color: var(--verde-oscuro);
+  border-color: var(--verde-claro);
+}
+
+/* ==========================================================================
+   ALERTAS Y ERRORES (<p class="error"> y <section class="estado">)
+   ========================================================================== */
+.error {
+  max-width: 44rem;
+  padding: 0.85rem 1.25rem;
+  border-left: 4px solid #dc2626;
+  border-radius: var(--radio-sm);
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.estado {
+  max-width: 42rem;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  background: var(--bg-superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-sm);
+  text-align: center;
+  margin-inline: auto;
+}
+
+.estado h1 {
+  margin-block: 0.5rem;
+}
+
+.estado p:not(.etiqueta) {
+  color: var(--texto-secundario);
+  font-size: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+/* ==========================================================================
+   PIE DE PÁGINA (<footer class="pie">)
+   ========================================================================== */
+.pie {
+  width: 100%;
+  margin-top: auto;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--borde);
+  background: var(--bg-superficie);
+  text-align: center;
+  color: var(--texto-mutado);
+  font-size: 0.9rem;
+}
+
+.pie p {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE / MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 45rem) {
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cabecera-pagina {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  dl {
+    grid-template-columns: 1fr;
+    row-gap: 0.4rem;
+  }
+
+  form.formulario button.boton {
+    width: 100%;
+  }
+}

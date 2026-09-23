@@ -1,0 +1,37 @@
+<header class="cabecera-pagina">
+    <div>
+        <p class="etiqueta">CATALOGO</p>
+        <h1>
+            <%= titulo %>
+        </h1>
+    </div>
+    <a class="boton" href="/plantas/nueva">Agregar planta</a>
+</header>
+
+<% if (plantas.length===0) { %>
+    <p>No hay plantas cargadas</p>
+    <% } else { %>
+        <section class="grilla" aria-label="Catalogo de plantas">
+            <% plantas.forEach(planta=> { %>
+                <article class="tarjeta-planta">
+                    <img src="/img/suculenta.jpg" alt="">
+                    <h2>
+                        <%= planta.nombre %>
+                    </h2>
+                    <div class="meta">
+                        <span>
+                            <%= planta.tipo %>
+                        </span>
+                        <span>
+                            <%= planta.riego %>
+                        </span>
+                        <span>
+                            <%= planta.luz %>
+                        </span>
+
+                        <a href="/plantas/ <%= planta.id %> " class="boton-secundario">Ver cuidados</a>
+                    </div>
+                </article>
+                <% }) %>
+        </section>
+        <% } %>

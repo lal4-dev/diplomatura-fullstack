@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" aria-label="Hoja de planta" role="img">
+  <defs>
+    <!-- Fondo verde bosque elegante -->
+    <linearGradient id="leafBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b4332" />
+      <stop offset="100%" stop-color="#0f291e" />
+    </linearGradient>
+
+    <!-- Degradé de la hoja: tonos botánicos frescos y uniformes -->
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2d6a4f" />
+      <stop offset="45%" stop-color="#40916c" />
+      <stop offset="80%" stop-color="#52b788" />
+      <stop offset="100%" stop-color="#74c69d" />
+    </linearGradient>
+
+    <!-- Sombra sutil integrada -->
+    <filter id="softGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Contenedor redondeado estilo marca -->
+  <rect width="64" height="64" rx="18" fill="url(#leafBg)" />
+
+  <g filter="url(#softGlow)">
+    <!-- Tallo conectado a la base -->
+    <path d="M 16 48 C 18 45, 21 42, 23 41" fill="none" stroke="#d8f3dc" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Silueta botánica de la hoja: limpia, simétrica y orgánica -->
+    <path d="M 23 41 C 15 30, 27 16, 48 16 C 48 37, 34 49, 23 41 Z" fill="url(#leafGrad)" />
+
+    <!-- Nervadura central continua hacia el ápice -->
+    <path d="M 23 41 C 30 33, 38 25, 47 17" fill="none" stroke="#133827" stroke-width="1.6" stroke-linecap="round" opacity="0.55" />
+
+    <!-- Nervaduras laterales superiores -->
+    <path d="M 30 34 Q 26 29, 23 28" fill="none" stroke="#133827" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+    <path d="M 35 29 Q 32 24, 29 22" fill="none" stroke="#133827" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+    <path d="M 40 24 Q 38 20, 36 18" fill="none" stroke="#133827" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+
+    <!-- Nervaduras laterales inferiores -->
+    <path d="M 30 34 Q 36 38, 37 41" fill="none" stroke="#133827" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+    <path d="M 35 29 Q 41 33, 43 36" fill="none" stroke="#133827" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+    <path d="M 40 24 Q 44 26, 46 29" fill="none" stroke="#133827" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
+  </g>
+</svg>

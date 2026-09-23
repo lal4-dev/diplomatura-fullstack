@@ -1,0 +1,1 @@
+console.log("catalogo de plantas listo")
