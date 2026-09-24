@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombre": "Cuenco de ceramica",
+        "categoria": "cerámica",
+        "precio": 18500,
+        "descripcion": "Pieza modela y esmaltada a mano. apto para alimentos y microondas"
+    },
+    {
+        "id": 2,
+        "nombre": "Cuaderno cosido",
+        "categoria": "Papeleria",
+        "precio": 9200,
+        "descripcion": "Cauaderno de tapa dura con encuadernacion artesanal"
+    }
+]
