@@ -37,6 +37,10 @@
 *   ✅ **TP 1:** Completado
 *   ✅ **TP 2:** Completado
 *   ✅ **TP 3:** Completado
-*   🚧 **TP 4:** Sin iniciar...
+*   ✅ **TP 4:** Completado
+*   ✅ **TP 5:** Completado
+*   ✅ **TP 6:** Completado
+
+*   🚧 **TP 7:** Sin iniciar...
 
 ---
