@@ -1,0 +1,56 @@
+<div class="cabecera-area">
+  <div class="titulo-grupo">
+    <span class="insignia-seccion"><%= seccion %></span>
+    <h1 class="titulo-pagina">Listado de Reservas Activas</h1>
+    <p class="subtitulo-pagina">Turnos programados temporalmente en el sistema para salas de estudio.</p>
+  </div>
+  <div class="acciones-area">
+    <a href="/reservas/nueva" class="boton boton-primario">+ Nueva reserva</a>
+  </div>
+</div>
+
+<% if (reservas && reservas.length > 0) { %>
+  <div class="grilla-reservas">
+    <% reservas.forEach((reserva) => { %>
+      <article class="tarjeta-reserva">
+        <div class="tarjeta-reserva-encabezado">
+          <span class="reserva-id">Turno #<%= reserva.id %></span>
+          <span class="insignia-turno turno-<%= reserva.turno.toLowerCase() %>"><%= reserva.turno %></span>
+        </div>
+
+        <h2 class="reserva-estudiante"><%= reserva.estudiante %></h2>
+        <p class="reserva-email"><%= reserva.email %></p>
+
+        <div class="reserva-detalles">
+          <div class="detalle-item">
+            <span class="detalle-icono">📍</span>
+            <span class="detalle-texto"><%= reserva.sala %></span>
+          </div>
+          <div class="detalle-item">
+            <span class="detalle-icono">📅</span>
+            <span class="detalle-texto"><%= reserva.fecha %></span>
+          </div>
+          <div class="detalle-item">
+            <span class="detalle-icono">👥</span>
+            <span class="detalle-texto"><%= reserva.personas %> <%= reserva.personas === 1 ? 'persona' : 'personas' %></span>
+          </div>
+        </div>
+
+        <div class="tarjeta-reserva-pie">
+          <a href="/reservas/<%= reserva.id %>" class="boton-detalle">Ver detalle completo &rarr;</a>
+        </div>
+      </article>
+    <% }); %>
+  </div>
+<% } else { %>
+  <div class="estado-vacio">
+    <div class="icono-vacio">📭</div>
+    <h2>No hay reservas registradas actualmente</h2>
+    <p>En este momento todas las salas de estudio se encuentran disponibles. ¡Sé el primero en reservar un turno!</p>
+    <a href="/reservas/nueva" class="boton boton-primario">Crear la primera reserva</a>
+  </div>
+<% } %>
+
+<div class="barra-navegacion-inferior">
+  <a href="/" class="enlace-volver">&larr; Volver al inicio</a>
+</div>
