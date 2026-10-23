@@ -1,7 +1,7 @@
 const path = require("node:path");
-const { leerJson } = require("./archivos");
+const { leerJson } = require("./archivo");
 const { leerConfiguracion } = require("./config/entorno");
-const { crearServicioProductos } = require("./servicios/productos");
+const { crearServicioProductos } = require("./services/productos");
 const { crearApp } = require("./app");
 const rutaDatos = path.join(__dirname, "..", "datos", "productos.json");
 
