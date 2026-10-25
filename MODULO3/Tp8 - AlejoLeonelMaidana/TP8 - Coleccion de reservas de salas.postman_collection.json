@@ -1,0 +1,697 @@
+{
+  "info": {
+    "_postman_id": "b18529a9-cc7c-4d3b-89a7-48cb29b45d1d",
+    "name": "TP8 - Coleccion de reservas de salas",
+    "description": "Colección completa de pruebas para la auditoría del TP8. Cubre todos los casos de la Matriz Mínima requerida por la cátedra.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58040339",
+    "_collection_link": "https://go.postman.co/collection/58040339-b18529a9-cc7c-4d3b-89a7-48cb29b45d1d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Casos exitosos",
+      "item": [
+        {
+          "name": "1. Listado inicial",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`200 OK`**\n    \n- Cuerpo: Un arreglo `[]` o con las reservas que ya estén guardadas en la db"
+          },
+          "response": []
+        },
+        {
+          "name": "2. Crear una reserva valida",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`201 Created`**\n    \n- Cuerpo: El objeto recién creado con su `id` (de 24 caracteres) y `\"estado\": \"pendiente\"`."
+          },
+          "response": []
+        },
+        {
+          "name": "3. Consultar reserva por id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas/6add6262b5af4ab7fed4fb12",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas",
+                "6add6262b5af4ab7fed4fb12"
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`200 OK`**\n    \n- Cuerpo: El documento con el mismo `id`, los datos de \"Ana Ejemplo\" y `\"estado\": \"pendiente\"`."
+          },
+          "response": []
+        },
+        {
+          "name": "4. Crear con campos extra(prueba de seguridad)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Carlos Intruso\",\r\n  \"email\": \"carlos@example.com\",\r\n  \"sala\": \"Sala Sur\",\r\n  \"fecha\": \"2026-10-26\",\r\n  \"turno\": \"Tarde\",\r\n  \"personas\": 4,\r\n  \"estado\": \"confirmada\",\r\n  \"_id\": \"600000000000000000000000\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`201 Created`**\n    \n- Cuerpo: Para el `_id` que intentamos inyectar (Mongo generó uno nuevo) y que el `estado` sigue siendo **`\"pendiente\"`**, ignorando el `\"confirmada\"` que mandamos en el body."
+          },
+          "response": []
+        },
+        {
+          "name": "5. Fltro exacto por sala",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas?sala=Sala Norte",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ],
+              "query": [
+                {
+                  "key": "sala",
+                  "value": "Sala Norte"
+                }
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`200 OK`**\n    \n- Cuerpo: Una lista donde **todas** las reservas tienen `\"sala\": \"Sala Norte\"`."
+          },
+          "response": []
+        },
+        {
+          "name": "6. Filtro exacto por sala fantasma",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas?sala=Sala Fantasma",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ],
+              "query": [
+                {
+                  "key": "sala",
+                  "value": "Sala Fantasma"
+                }
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`200 OK`**\n    \n- Cuerpo: `[]` (Arreglo vacío)."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Identificadores, filtros y rutas invalidas",
+      "item": [
+        {
+          "name": "7. Id mal formado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas",
+                "1"
+              ]
+            },
+            "description": "Resultado esperado:\n\n- Estado: 400 Bad Request\n    \n- Cuerpo JSON:\n    \n\n`{ \"error\": \"El identificador debe tener 24 caracteres hexadecimales.\", \"campos\": [ ] }`"
+          },
+          "response": []
+        },
+        {
+          "name": "8. Id bien formado inexistente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas/000000000000000000000000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas",
+                "000000000000000000000000"
+              ]
+            },
+            "description": "Resultado esperado:\n\n- Estado: 404 Not Found\n    \n- Cuerpo JSON:\n    \n\n`{ \"error\": \"Reserva no encontrada\" }`"
+          },
+          "response": []
+        },
+        {
+          "name": "9. Sala repetida como parametro",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas?sala=Sala Norte&sala=Sala Sur",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ],
+              "query": [
+                {
+                  "key": "sala",
+                  "value": "Sala Norte"
+                },
+                {
+                  "key": "sala",
+                  "value": "Sala Sur"
+                }
+              ]
+            },
+            "description": "Resultado esperado:\n\n- Estado: 404 Not Found\n    \n- Cuerpo JSON:\n    \n\n`{ \"error\": \"El parametro de sala debe ser un texto\",    \"campos\": [ ] }   `"
+          },
+          "response": []
+        },
+        {
+          "name": "10. Ruta desconocida en la Api",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/ruta-desconocida",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "ruta-desconocida"
+              ]
+            },
+            "description": "**Resultado esperado**:\n\n- Estado: **`404 Not Found`**\n    \n- Cuerpo JSON:\n    \n\n`{ \"error\": \"ruta no encontrado\"}`"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Validaciones de texto y enums",
+      "item": [
+        {
+          "name": "11.  Estudiante vacio",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "12.  Email sin @",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"anaexample.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "13.  Sala no permitida",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala inexistente\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "14. Turno no permitido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Madrugada\",\r\n  \"personas\": 2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "15. Fecha vacia",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 2\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Validacion Estricta de personas",
+      "item": [
+        {
+          "name": "16. Personas 0",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 0\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "17. Personas 7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 7\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "18. Personas 2.5",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": 2.5\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "19. Personas abc",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": \"abc\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "20. Persona true",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": true\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "21. Personas [ ]",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": [2]\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "22. Personas objeto",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@example.com\",\r\n  \"sala\": \"Sala Norte\",\r\n  \"fecha\": \"2026-10-25\",\r\n  \"turno\": \"Mañana\",\r\n  \"personas\": { \"cant\":2 }\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cuerpos Ausentes y Sintaxis Rota",
+      "item": [
+        {
+          "name": "23. Post sin cuerpo",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "24. Post con json mal formado",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"estudiante\": \"Ana Ejemplo\",\r\n  \"email\": \"ana@\"\r\n  \r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3005/api/reservas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3005",
+              "path": [
+                "api",
+                "reservas"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "id_creado",
+      "value": ""
+    }
+  ]
+}
