@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilo.css">
+    <title>
+        <%= titulo %> Mercado Artesanal
+    </title>
+
+    <script src="/js/app.js" defer></script>
+</head>
+
+<body>
+    <%- include("../partials/encabezado.ejs") %>
+        <main class="contenedor">
+            <%- body %>
+        </main>
+        <%- include("../partials/pies.ejs") %>
+</body>
+
+</html>
