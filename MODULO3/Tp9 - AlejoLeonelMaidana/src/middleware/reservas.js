@@ -29,6 +29,16 @@ function validarReserva(req, res, next) {
 
   const valores = req.body;
 
+  // En POST no aceptamos que el cliente envíe estado ni _id
+  if (
+    req.method === "POST" &&
+    (valores.estado !== undefined || valores._id !== undefined)
+  ) {
+    return res
+      .status(400)
+      .json({ error: "No se permite enviar estado ni _id al crear." });
+  }
+
   //validamos tipos estrictos de texto, rechazamos objtos arreglos y booleanos
   const estudiante =
     typeof valores.estudiante === "string"

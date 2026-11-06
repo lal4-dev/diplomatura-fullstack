@@ -1,5 +1,5 @@
 {
-  "name": "tp-09-salas-mongodb",
+  "name": "tp-09-salas-crud-mongodb",
   "version": "1.0.0",
   "description": "TP 09 - Actualización y eliminación de reservas de salas con MongoDB y Mongoose",
   "main": "src/index.js",
